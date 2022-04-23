@@ -1,0 +1,196 @@
+{
+    "generic": {
+        "app_name": "Smart POS",
+        "mandatory_fields": "You must enter a value",
+        "non_selected": "Choose an option",
+        "max_field_character": "Max {{value}} characters",
+        "invalid_email_format": "Please enter a valid email address",
+        "accepted_extensions": "Accepted extensions: {{extensions}}",
+        "choose_file": "Choose a file",
+        "buttons": {
+            "save": "Save",
+            "clear": "Clear",
+            "cancel": "Cancel",
+            "back": "Back",
+            "continue": "Continue"
+        },
+        "actions": {
+            "filter": "Filter",
+            "actions": "Actions",
+            "edit": "Edit",
+            "delete": "Delete",
+            "create": "Create",
+            "admin": "Manage",
+            "download": "Descargar",
+            "detail": "Ver detalle",
+            "add": "Add"
+        },
+        "messages": {
+            "mandatory_fields": "You must fill all mandatory fields",
+            "generic_error": "Error. Please contact your technical team.",
+            "delete_confirmation": "Are you sure you want to delete this item?",
+            "refresh_page": "When refreshing this page, for security reasons the user's session will be invalidated and they will have to enter the platform again, if they are executing any process or entering information in a form, they will be permanently lost.",
+            "not_allow_resource": "You do not have access to the requested resource. Please contact the system administrator"
+
+        },
+        "titles": {
+            "confirmation": "Confirmation",
+            "success": "Success",
+            "error": "Error",
+            "information": "Information"
+        },
+        "paginator": {
+            "itemsPerPageLabel": "Items per page",
+            "nextPageLabel": "Next Page",
+            "firstPageLabel": "First page",
+            "lastPageLabel": "Last page",
+            "previousPageLabel": "Previous page",
+            "range": "of"
+        },
+        "report": {
+            "format": "Format",
+            "actions": {
+                "export": "export"
+            }
+        },
+        "habeas_data": "¿Have I read and agree with the data processing policy?"
+    },
+    "home": {
+        "title": "Smart Pos",
+        "signout": "Logout",
+        "leave_a_comment": "Leave a comment",
+        "good_stand_cert_title": "Good standing certificate",
+        "invoice_history_title": "See invoice history",
+        "good_stand_cert": "Peace and save",
+        "invoice_history": "My invoices",
+        "invoice": "Invoice"
+    },
+    "login": {
+        "title": "Login",
+        "username": "Username",
+        "password": "Password",
+        "wrong_user": "Wrong user",
+        "hide_password": "Hide password",
+        "loginbutton": "Login",
+        "no_entity_selected": "Please choose an entity",
+        "no_property_selected": "Please choose a prperty"
+    },
+    "header": {
+        "manage_account": "Account settings",
+        "change_password": "Change your password",
+        "log_off": "Log out",
+        "menu": {
+            "home": "HOME",
+            "management": {
+                "title": "MANAGEMENT",
+                "peace_save": "Generate peace and save",
+                "account_statement": "Account statement",
+                "billing_history": "Billing history"
+            },
+            "open": "Open",
+            "close": "Close"
+        },
+        "notifications": "Notifications"
+    },
+    "footer": {
+        "lang_chooser_title": "Choose one",
+        "social_network": "Get connected with us on social networks!",
+        "default_entity_description": "Smart Pos allows you to easily check your property billing. You can also pay or file a claim if you find some mistake on your bill.",
+        "useful_links": "Useful links",
+        "your_account": "Your account",
+        "send_message": "Send a message",
+        "invoice_history": "Billing history",
+        "contact_us": "Contact us"
+    },
+    "contact_form": {
+        "title": "Write your message",
+        "name": "Your name",
+        "email": "Your email",
+        "subject": "Subject",
+        "message": "Your message",
+        "send": "Send"
+    },
+    "change_password": {
+        "title": "Change password",
+        "current_password": "Current password",
+        "new_password": "New password",
+        "password_confirm": "Confirm new password",
+        "hide_password": "Hide"
+    },
+    "entity_selection": {
+        "title": "Choose an entity"
+    },
+    "item": {
+        "name": "Item",
+        "views": {
+            "grid": "View as table of items",
+            "list": "View as list of items",
+            "refresh": "Refresh list"
+
+        },
+        "no_data_found": "There are no products available in the inventory."
+    },
+    "sale": {
+        "title": "Sales",
+        "table_title": "List Items",
+        "user": "Customer",
+        "btn_sale": "SALE",
+        "btn_reverse": "CANCEL",
+        "btn_close": "Close",
+        "total": "Total:",
+        "subtotal": "Subtotal:",
+        "vat": "VAT",
+        "ct": "ConsumTax",
+        "detail": "Sale invoice",
+        "total_items": "Total items: ",
+        "discount": "Discount: ",
+        "discount_detail": "Show detail discount",
+        "confirm": {
+            "value_received": "Enter the received value",
+            "value_return": "Return: "
+        },
+        "msg_add_items": "Enter items for sale",
+        "clear_user": "Clear customer",
+        "create_user": "Create new customer",
+        "search_user": "Search customer"
+    },
+    "customer": {
+        "title": "Create new customer",
+        "id_type": "ID type",
+        "id": "ID",
+        "business_name": "Business name",
+        "first_name": "First name",
+        "first_last_name": "First last name",
+        "second_name": "Second name",
+        "second_last_name": "Second last name",
+        "email": "Email",
+        "phone": "Phone",
+        "gender": "Gender",
+        "btn_close": "Close",
+        "btn_save": "Save"
+    },
+    "discount": {
+        "title": "Discount detail",
+        "title_item": "Discount items",
+        "tooltip": "Here you can check for discounted products."
+    },
+    "shopping": {
+        "create_section_title": "Manage purchases",
+        "form": {
+            "create_date": "Creation date",
+            "description": "Purchase description",
+            "value": "Purchase value",
+            "total": "Purchase total",
+            "btn_shopping": "Save purchase"
+        },
+        "table": {
+            "create_date": "Creation date",
+            "description": "Purchase description",
+            "value": "Purchase value"
+        },
+        "messages": {
+            "success": "Purchase success"
+        }
+    }
+
+}

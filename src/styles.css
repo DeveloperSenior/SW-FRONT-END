@@ -43,3 +43,11 @@ p {
 .toolbar img {
     margin: 0 16px;
 }
+
+
+/* init app*/
+
+.init-app-box {
+    margin: auto;
+    margin-top: 15%;
+}

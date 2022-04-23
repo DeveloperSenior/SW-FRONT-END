@@ -1,0 +1,87 @@
+{
+    "generic": {
+        "app_name": "Smart POS",
+        "mandatory_fields": "Debe ingresar un valor",
+        "non_selected": "Seleccione una opción",
+        "max_field_character": "Max {{value}} caracteres",
+        "invalid_email_format": "Ingrese un correo electrónico válido",
+        "accepted_extensions": "Formatos válidos: {{extensions}}",
+        "choose_file": "Seleccione un archivo",
+        "total": "Total",
+        "buttons": {
+            "save": "Guardar",
+            "clear": "Limpiar",
+            "cancel": "Cancelar",
+            "back": "Atrás",
+            "continue": "Continuar",
+            "send": "Enviar",
+            "search": "Buscar",
+            "close": "Cerrar",
+            "add": "Agregar",
+            "export": "Exportar",
+            "remove": "Remover",
+            "apply": "Aplicar",
+            "register": "Registrar"
+        },
+        "actions": {
+            "filter": "Filtrar",
+            "actions": "Acciones",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "create": "Crear",
+            "admin": "Administrar",
+            "download": "Descargar",
+            "detail": "Ver detalle",
+            "close": "Cerrar",
+            "refresh": "Actualizar lista",
+            "revert": "Anular",
+            "reprint": "Reimprimir",
+            "add": "Adicionar"
+        },
+        "form": {
+            "filters": "Filtros",
+            "results": "Resultados de la búsqueda",
+            "start_date": "Fecha de inicio",
+            "end_date": "Fecha de finalización"
+        },
+        "messages": {
+            "mandatory_fields": "Debe diligenciar todos los campos obligatorios",
+            "generic_error": "Error. Por favor contacta tu equipo de TI.",
+            "delete_confirmation": "¿Confirma que desea eliminar el registro?",
+            "no_data": "No se ha encontrado información.",
+            "refresh_page": "Al refrescar esta pagina, por seguridad la sesión del usuario será invalidada y tendrá que ingresar nuevamente a la plataforma, si esta ejecutando algun proceso o ingresando información en un formulario está se perderá de manera permanente.",
+            "loading": "Cargando...",
+            "not_allow_resource": "No tiene acceso al recurso solicitado ... Póngase en contacto con el administrador del sistema"
+        },
+        "titles": {
+            "confirmation": "Confirmación",
+            "success": "Éxito",
+            "error": "Error",
+            "information": "Información"
+        },
+        "paginator": {
+            "itemsPerPageLabel": "Registros por página",
+            "nextPageLabel": "Siguiente página",
+            "firstPageLabel": "Primera página",
+            "lastPageLabel": "Última página",
+            "previousPageLabel": "Pagina anterior",
+            "range": "de"
+        },
+        "report": {
+            "format": "Formato",
+            "actions": {
+                "export": "exportar"
+            }
+        },
+        "habeas_data": "¿He leído y acepto la política de tratamiento de datos?"
+    },
+    "app": {
+        "title_document_id": "Validación de personas",
+        "subtitle_document_id": "",
+        "id": "Cédula",
+        "signout": "Cerrar sesión",
+        "leave_a_comment": "Déjanos tus comentarios"
+    }
+
+
+}
