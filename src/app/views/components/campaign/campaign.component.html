@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="my-2">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Campañas</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form class="form-container" autocomplete="off" (ngSubmit)="save()">
+
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput #inputNombre placeholder="Nombre" [formControl]="nombre" required maxlength="30">
+                            <mat-hint align="end">{{inputNombre.value?.length || 0}} / 30</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Código</mat-label>
+                            <input matInput #inputCodigo placeholder="Código" [formControl]="codigo" required maxlength="30">
+                            <mat-hint align="end">{{inputCodigo.value?.length || 0}} / 30</mat-hint>
+
+                        </mat-form-field>
+
+                        <mat-card-actions class="d-flex" align="end">
+                            <button mdbBtn class="btn btn-info" type="submit"> Guardar</button>
+                        </mat-card-actions>
+                    </form>
+                </mat-card-content>
+
+
+                <mat-form-field class="ml-2 mat-form-field-filter">
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar">
+                </mat-form-field>
+
+                <div class="d-flex justify-content-end align-items-center">
+                    <div class="pointer" (click)="ngOnInit()">
+                        <small>Refrescar</small>
+                        <button mat-icon-button>
+            <mat-icon class="pos-icon"
+                [title]="'Refrescar'">
+                refresh</mat-icon>
+        </button>
+                    </div>
+                </div>
+                <mat-table mat-table [dataSource]="campaignDataSource" #campaignTableSort="matSort" matSort #campaignTable>
+                    <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>
+                            Documento
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" data-label="id" data-label-key="id">
+                            {{element.id}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="nombre">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>
+                            Nombre
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" data-label="nombre" data-label-key="nombre">
+                            {{element.dsCampana}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="codigo">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>
+                            Código
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" data-label="cdCodigo" data-label-key="cdCodigo">
+                            {{element.cdCampana}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef>Acciones
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" data-label="" class="table-action">
+                            <button mat-icon-button (click)="edit(element)" [matTooltip]="'Editar'">
+                            <mat-icon class="pos-icon"
+                                [title]="'Editar'">
+                                edit</mat-icon>
+                        </button>
+                        </mat-cell>
+                    </ng-container>
+
+
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                </mat-table>
+
+                <mat-paginator #campaignPaginator [pageSizeOptions]="[6, 12, 24]" showFirstLastButtons [hidden]="campaignList.length === 0">
+                </mat-paginator>
+
+                <mat-card class="user-message-container" *ngIf="campaignList.length === 0">
+                    sin datos
+                </mat-card>
+            </mat-card>
+        </div>
+    </div>
+</div>

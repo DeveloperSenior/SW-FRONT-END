@@ -5,9 +5,11 @@
     </button>
     <span>Eleciones APP</span>
     <span class="example-spacer"></span>
+    <button mat-button routerLink="/home">Ir Inicio</button>
     <button mat-button [matMenuTriggerFor]="belowMenu">Administrar</button>
     <mat-menu #belowMenu="matMenu" yPosition="below">
         <button mat-menu-item routerLink="/person">Personas</button>
+        <button mat-menu-item routerLink="/campaign">Campañas</button>
     </mat-menu>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
@@ -16,7 +18,7 @@
         <mat-icon>share</mat-icon>
     </button>
 </mat-toolbar>
-<div class="container">
+<div class="container bg-center m-3">
     <div class="row content">
         <div class="col-12">
             <router-outlet></router-outlet>

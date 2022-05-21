@@ -15,12 +15,21 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit {
 
+  campaignsList: any[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient,
+    private traslate: TranslateService) { }
 
   ngOnInit(): void {
 
+    this.loadAll();
 
+  }
+
+  loadAll() {
+    this.http.get(`${environment.url}/campaign`).subscribe((response: any) => {
+      this.campaignsList = response;
+    });
   }
 
 }
