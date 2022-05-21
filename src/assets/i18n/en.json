@@ -1,6 +1,6 @@
 {
     "generic": {
-        "app_name": "Smart POS",
+        "app_name": "Elecciones",
         "mandatory_fields": "You must enter a value",
         "non_selected": "Choose an option",
         "max_field_character": "Max {{value}} characters",

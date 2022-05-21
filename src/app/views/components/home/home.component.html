@@ -1,51 +1,14 @@
-<mat-table mat-table [dataSource]="personDataSource" #personTableSort="matSort" matSort #personTable [hidden]="personList.length === 0">
+<mat-grid-list cols="2">
+    <mat-grid-tile>
 
-    <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-            Documento
-        </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="Factura" data-label-key="daily-sales.tabs.sale.table.invoice">
-            {{element[0]}}
-        </mat-cell>
-    </ng-container>
+        <mat-card>
+            <mat-card-title>Actions Buttons</mat-card-title>
+            <mat-card-subtitle>Start</mat-card-subtitle>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
 
-    <ng-container matColumnDef="nombre">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-            Nombre
-        </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="nombre" data-label-key="nombre">
-            {{element[1]}}
-        </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="apellido">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-            Apellido
-        </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="apellido" data-label-key="apellido">
-            {{element[2]}}
-        </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-            Correo electronico
-        </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="email" data-label-key="email">
-            {{element[3]}}
-        </mat-cell>
-    </ng-container>
-
-
-
-    <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-</mat-table>
-
-<mat-paginator #personPaginator [pageSizeOptions]="[6, 12, 24]" showFirstLastButtons [hidden]="personList.length === 0">
-</mat-paginator>
-
-<mat-card class="user-message-container" *ngIf="personList.length === 0">
-    sin datos
-</mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

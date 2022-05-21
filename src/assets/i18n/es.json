@@ -1,6 +1,6 @@
 {
     "generic": {
-        "app_name": "Smart POS",
+        "app_name": "Elecciones",
         "mandatory_fields": "Debe ingresar un valor",
         "non_selected": "Seleccione una opción",
         "max_field_character": "Max {{value}} caracteres",
@@ -51,7 +51,8 @@
             "no_data": "No se ha encontrado información.",
             "refresh_page": "Al refrescar esta pagina, por seguridad la sesión del usuario será invalidada y tendrá que ingresar nuevamente a la plataforma, si esta ejecutando algun proceso o ingresando información en un formulario está se perderá de manera permanente.",
             "loading": "Cargando...",
-            "not_allow_resource": "No tiene acceso al recurso solicitado ... Póngase en contacto con el administrador del sistema"
+            "not_allow_resource": "No tiene acceso al recurso solicitado ... Póngase en contacto con el administrador del sistema",
+            "process_success": "Transacción procesada"
         },
         "titles": {
             "confirmation": "Confirmación",

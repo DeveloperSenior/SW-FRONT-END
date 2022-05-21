@@ -3,14 +3,16 @@ import {Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'person',
+    loadChildren: () => import('./views/components/person/person.module').then(m => m.PersonModule)
+  },
+  {
     path: 'home',
-    /*canActivate: [SmartAuthGuard],*/
     loadChildren: () => import('./views/components/home/home.module').then(m => m.HomeModule)
   },
   {
     path: '**',
     pathMatch: 'full',
-    /*canActivate: [SmartAuthGuard],*/
     loadChildren: () => import('./views/components/home/home.module').then(m => m.HomeModule)
   }
 ];

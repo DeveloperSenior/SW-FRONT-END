@@ -16,6 +16,7 @@ import { ElectionsUtilsService } from './shared/services/elections.util.service'
 import { CookieService } from 'ngx-cookie-service';
 import { ElectionsAuthGuard } from './utils/elections.auth.guard';
 import { AuthInterceptor } from './utils/elections.auth.interceptor';
+import { BlockUIModule } from 'ng-block-ui';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -39,9 +40,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BlockUIModule.forRoot( {
+      message: 'Procesando'
+    } ),
   ],
-  providers: [ElectionsUtilsService, CookieService, ElectionsAuthGuard,],
+  providers: [ElectionsUtilsService, CookieService, ElectionsAuthGuard,
+   {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

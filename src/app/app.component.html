@@ -1,169 +1,25 @@
-<!--<div *ngIf="!isLogin" class="d-flex flex-fill justify-content-center align-items-center mt-3 mb-3 vh-100"><
-    <mat-card>
-        <mat-card-title>{{'app.title_document_id' | translate}}</mat-card-title>
-        <mat-card-subtitle>{{'app.subtitle_document_id' | translate}}</mat-card-subtitle>
-        <mat-card-content class="center">
-            <form class="form-container" autocomplete="off">
-                <mat-form-field class="example-form-field" appearance="fill">
-                    <mat-label>{{'app.id' | translate}}</mat-label>
-                    <input matInput #inputId placeholder="{{'app.id' | translate}}" [formControl]="id" required maxlength="30">
-                    <mat-hint align="end">{{inputId.value?.length || 0}} / 30</mat-hint>
-                    <mat-error *ngIf="id.invalid">
-                        {{this.id.hasError('required') ? this.translate.instant('generic.mandatory_fields') : ''}}
-                    </mat-error>
-                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-
-                     <mat-icon>close</mat-icon>
-
-                    </button>
-                </mat-form-field>
-            </form>
-            <section [formGroup]="termsChecks">
-                <p>
-                    <mat-checkbox formControlName="addTerms">{{'generic.habeas_data' | translate}}</mat-checkbox>
-                </p>
-            </section>
-        </mat-card-content>
-        <mat-card-actions align="end">
-            <button mat-button [disabled]="(!termsChecks.value.addTerms)" (click)="goHome()">{{'generic.buttons.apply' | translate}}</button>
-        </mat-card-actions>
-    </mat-card>
-</div>
-<div class="container-fluid">
+<block-ui></block-ui>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Eleciones APP</span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="belowMenu">Administrar</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item routerLink="/person">Personas</button>
+    </mat-menu>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="container">
     <div class="row content">
         <div class="col-12">
             <router-outlet></router-outlet>
-        </div>
-    </div>
-</div>-->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="my-2">
-            <mat-form-field class="ml-2 mat-form-field-filter">
-                <input matInput (keyup)="applySaleFilter($event)" placeholder="Filtrar">
-            </mat-form-field>
-
-            <div class="d-flex justify-content-end align-items-center">
-                <div class="pointer" (click)="ngOnInit()">
-                    <small>Refrescar</small>
-                    <button mat-icon-button>
-            <mat-icon class="pos-icon"
-                [title]="'Refrescar'">
-                refresh</mat-icon>
-        </button>
-                </div>
-            </div>
-            <mat-card-content>
-                <form class="form-container" autocomplete="off" (ngSubmit)="save()">
-
-                    <mat-form-field appearance="fill">
-                        <mat-label>Tipo documento</mat-label>
-                        <mat-select [formControl]="tipo" name="food">
-                            <mat-option *ngFor="let type of types" [value]="type">
-                                {{type}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="example-form-field" appearance="fill">
-                        <mat-label>Documento</mat-label>
-                        <input matInput #inputId placeholder="Documento" [formControl]="id" required maxlength="30">
-                        <mat-hint align="end">{{inputId.value?.length || 0}} / 30</mat-hint>
-
-                    </mat-form-field>
-                    <mat-form-field class="example-form-field" appearance="fill">
-                        <mat-label>Nombre</mat-label>
-                        <input matInput #inputNombre placeholder="Nombre" [formControl]="nombre" required maxlength="30">
-                        <mat-hint align="end">{{inputNombre.value?.length || 0}} / 30</mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field class="example-form-field" appearance="fill">
-                        <mat-label>Celular</mat-label>
-                        <input matInput #inputCelular placeholder="Celular" [formControl]="celular" required maxlength="30">
-                        <mat-hint align="end">{{inputCelular.value?.length || 0}} / 30</mat-hint>
-
-                    </mat-form-field>
-
-                    <mat-form-field class="example-form-field" appearance="fill">
-                        <mat-label>Email</mat-label>
-                        <input matInput #inputEmail placeholder="Email" [formControl]="email" required maxlength="30">
-                        <mat-hint align="end">{{inputEmail.value?.length || 0}} / 30</mat-hint>
-
-                    </mat-form-field>
-                    <mat-card-actions class="d-flex">
-                        <button mdbBtn class="btn btn-info" type="submit"> Guardar</button>
-                    </mat-card-actions>
-                </form>
-            </mat-card-content>
-            <mat-table mat-table [dataSource]="personDataSource" #personTableSort="matSort" matSort #personTable>
-                <ng-container matColumnDef="tipo">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>
-                        Tipo Documento
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="tipo documento" data-label-key="id">
-                        {{element.CdTipoDocumento}}
-                    </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="id">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>
-                        Documento
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="id" data-label-key="id">
-                        {{element.CdDocumento}}
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="nombre">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>
-                        Nombre
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="nombre" data-label-key="nombre">
-                        {{element.DsNombreCompleto}}
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="celular">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>
-                        Celular
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="celular" data-label-key="celular">
-                        {{element.DsCelular}}
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="email">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>
-                        Correo electronico
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="email" data-label-key="email">
-                        {{element.DsEmail}}
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="actions">
-                    <mat-header-cell *matHeaderCellDef>Acciones
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let element" data-label="" class="table-action">
-                        <button mat-icon-button (click)="edit(element)" [matTooltip]="'Editar'">
-                            <mat-icon class="pos-icon"
-                                [title]="'Editar'">
-                                edit</mat-icon>
-                        </button>
-                    </mat-cell>
-                </ng-container>
-
-
-
-                <mat-header-row *matHeaderRowDef="displayedColumns;"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-            </mat-table>
-
-            <mat-paginator #personPaginator [pageSizeOptions]="[6, 12, 24]" showFirstLastButtons [hidden]="personList.length === 0">
-            </mat-paginator>
-
-            <mat-card class="user-message-container" *ngIf="personList.length === 0">
-                sin datos
-            </mat-card>
         </div>
     </div>
 </div>
